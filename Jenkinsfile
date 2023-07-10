@@ -27,6 +27,14 @@ pipeline {
                 sh 'echo APP_INPUT - $APP_INPUT'
             }
         }
+        stage ('example deploy') {
+           when {
+             branch 'production'
+            }
+            steps {
+              echo 'deploying'
+            }
+        }
     }
 
     post {
